@@ -1,0 +1,7 @@
+{
+  "name": "Remix: Zenith 2k26 - KGiSL Symposium",
+  "description": "Official website for Zenith 2k26, a national level technical symposium organized by KGiSL Institute of Technology.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
