@@ -22,36 +22,36 @@ const cardVariants = {
 
 export default function TeamSection() {
     return (
-        <section id="team" className="py-24 bg-cyan-950 relative overflow-hidden">
+        <section id="team" className="py-12 sm:py-16 md:py-24 bg-cyan-950 relative overflow-hidden">
             {/* Ambient background glows */}
-            <div className="absolute top-0 left-1/4 w-[600px] h-[400px] bg-amber-500/5 rounded-full blur-[120px] pointer-events-none" />
-            <div className="absolute bottom-0 right-1/4 w-[600px] h-[400px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-0 left-1/4 w-[300px] sm:w-[400px] md:w-[600px] h-[200px] sm:h-[300px] md:h-[400px] bg-amber-500/5 rounded-full blur-[80px] sm:blur-[100px] md:blur-[120px] pointer-events-none" />
+            <div className="absolute bottom-0 right-1/4 w-[300px] sm:w-[400px] md:w-[600px] h-[200px] sm:h-[300px] md:h-[400px] bg-cyan-500/5 rounded-full blur-[80px] sm:blur-[100px] md:blur-[120px] pointer-events-none" />
 
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
                 {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
+                    className="text-center mb-12 sm:mb-14 md:mb-16"
                 >
-                    <p className="text-amber-500 font-mono text-sm tracking-widest uppercase mb-4">
+                    <p className="text-amber-500 font-mono text-xs sm:text-sm tracking-widest uppercase mb-3 sm:mb-4">
                         The People Behind It
                     </p>
-                    <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-100 mb-4">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-slate-100 mb-3 sm:mb-4">
                         Our{" "}
                         <span className="bg-gradient-to-r from-amber-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
                             Team
                         </span>
                     </h2>
                     {/* Accent line */}
-                    <div className="flex items-center justify-center gap-3 mb-4">
-                        <div className="w-8 h-[2px] bg-amber-500/40 rounded-full" />
-                        <div className="w-16 h-[2px] bg-amber-500 rounded-full" />
-                        <div className="w-8 h-[2px] bg-amber-500/40 rounded-full" />
+                    <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                        <div className="w-6 sm:w-8 h-[2px] bg-amber-500/40 rounded-full" />
+                        <div className="w-12 sm:w-16 h-[2px] bg-amber-500 rounded-full" />
+                        <div className="w-6 sm:w-8 h-[2px] bg-amber-500/40 rounded-full" />
                     </div>
-                    <p className="text-slate-400 text-lg max-w-xl mx-auto">
+                    <p className="text-slate-400 text-sm sm:text-base md:text-lg max-w-xl mx-auto">
                         Meet the dedicated people who make Zenith 2k26 possible.
                     </p>
                 </motion.div>
@@ -62,7 +62,7 @@ export default function TeamSection() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-60px" }}
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                    className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6"
                 >
                     {teamMembers.map((member) => (
                         <motion.div
@@ -70,7 +70,7 @@ export default function TeamSection() {
                             variants={cardVariants}
                             whileHover={{ y: -8, scale: 1.02 }}
                             transition={{ duration: 0.3 }}
-                            className="group relative flex flex-col items-center text-center p-8 rounded-3xl
+                            className="group relative flex flex-col items-center text-center p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl
                 bg-white/[0.03] backdrop-blur-sm
                 border border-white/[0.08]
                 hover:border-cyan-500/40
@@ -79,9 +79,9 @@ export default function TeamSection() {
                 transition-all duration-300 cursor-default"
                         >
                             {/* Profile Image */}
-                            <div className="relative mb-5">
+                            <div className="relative mb-4 sm:mb-5">
                                 <div
-                                    className="w-24 h-24 rounded-full overflow-hidden border-2 border-white/10
+                                    className="w-20 sm:w-24 h-20 sm:h-24 rounded-full overflow-hidden border-2 border-white/10
                     group-hover:border-amber-500/60 transition-all duration-300
                     group-hover:shadow-[0_0_20px_rgba(245,158,11,0.25)]"
                                 >
@@ -102,19 +102,19 @@ export default function TeamSection() {
                             </div>
 
                             {/* Name & Role */}
-                            <h3 className="text-lg font-bold text-slate-100 mb-1 leading-tight">
+                            <h3 className="text-sm sm:text-base md:text-lg font-bold text-slate-100 mb-1 leading-tight">
                                 {member.name}
                             </h3>
-                            <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-1">
+                            <p className="text-amber-400 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-1">
                                 {member.role}
                             </p>
                             {member.department && (
-                                <p className="text-slate-500 text-xs mb-5">{member.department}</p>
+                                <p className="text-slate-500 text-xs mb-4 sm:mb-5">{member.department}</p>
                             )}
 
                             {/* Social Icons — fade in on hover */}
                             <motion.div
-                                className="flex items-center gap-3 mt-auto pt-4"
+                                className="flex items-center gap-2 sm:gap-3 mt-auto pt-3 sm:pt-4"
                                 initial={{ opacity: 0, y: 6 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                             >

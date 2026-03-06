@@ -43,19 +43,19 @@ export default function CountdownTimer({ targetDate }: { targetDate: string }) {
   ];
 
   return (
-    <div className="flex flex-wrap justify-center gap-4 mt-8">
+    <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mt-6 sm:mt-8 px-2 sm:px-0">
       {timerItems.map((item, index) => (
         <motion.div
           key={item.label}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1 }}
-          className="relative min-w-[100px] md:min-w-[120px] bg-cyan-900 pt-6 pb-4 px-4 rounded-b-xl border-t-4 border-amber-500 shadow-2xl shadow-black/50 border-x border-b border-cyan-800"
+          className="relative min-w-[70px] sm:min-w-[90px] md:min-w-[100px] lg:min-w-[120px] bg-cyan-900 pt-3 sm:pt-4 md:pt-6 pb-2 sm:pb-3 md:pb-4 px-2 sm:px-3 md:px-4 rounded-b-lg sm:rounded-b-xl border-t-2 sm:border-t-4 border-amber-500 shadow-lg sm:shadow-2xl shadow-black/50 border-x border-b border-cyan-800"
         >
-          <div className="text-4xl md:text-5xl font-bold text-slate-100 mb-2 font-mono">
+          <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-100 mb-1 sm:mb-2 font-mono leading-none">
             {String(item.value).padStart(2, '0')}
           </div>
-          <div className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-slate-500">
+          <div className="text-[8px] sm:text-[9px] md:text-xs uppercase tracking-[0.1em] sm:tracking-[0.2em] font-bold text-slate-500">
             {item.label}
           </div>
         </motion.div>

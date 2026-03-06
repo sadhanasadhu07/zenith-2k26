@@ -10,39 +10,39 @@ interface TimelineItem {
 }
 
 const schedule: TimelineItem[] = [
-  {
-    time: "08:30 AM",
-    title: "Registration & Kit Distribution",
-    description: "Collect your event kits and ID cards at the main entrance.",
-    status: "upcoming",
-  },
-  {
-    time: "09:30 AM",
+    {
+    time: "09:00 AM",
     title: "Inauguration Ceremony",
     description: "Official commencement of Zenith 2k26 with our chief guests.",
     status: "upcoming",
   },
   {
-    time: "10:30 AM",
-    title: "Technical Events Phase 1",
-    description: "Paper Presentation, Codex, and Quick Bug Hunt sessions begin.",
+    time: "10.00 AM",
+    title: "Technical Events",
+    description: "Indrudex45, UI Matrix, Prompt to Pick and Rev Arena.",
     status: "upcoming",
   },
   {
     time: "12:30 PM",
-    title: "Networking Lunch",
+    title: "Lunch",
     description: "Enjoy a delicious lunch and connect with fellow participants.",
     status: "upcoming",
   },
   {
     time: "01:30 PM",
-    title: "Non-Technical & Fun Events",
-    description: "E-Sports, IPL Auction, and various fun games across campus.",
+    title: "Non-Technical",
+    description: "E-Sports, IPL Auction, Chess and Spot and Solve.",
     status: "upcoming",
   },
   {
-    time: "03:30 PM",
-    title: "Valedictory Ceremony",
+    time: "03.15 PM",
+    title: "Fun Events",
+    description: "Find the Song.",
+    status: "upcoming",
+  },
+  {
+    time: "03:45 PM",
+    title: "Prize Distribution",
     description: "Prize distribution and closing remarks.",
     status: "upcoming",
   },
@@ -61,17 +61,17 @@ export default function Timeline() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <div ref={containerRef} className="relative max-w-4xl mx-auto px-4 py-10">
+    <div ref={containerRef} className="relative max-w-4xl mx-auto px-2 sm:px-4 py-6 sm:py-10">
       {/* Background Dim Vertical Line */}
-      <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-cyan-900 -translate-x-1/2 hidden md:block" />
+      <div className="absolute left-3 sm:left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-cyan-900 -translate-x-1/2 hidden md:block" />
 
       {/* Active Glowing Vertical Line */}
       <motion.div
         style={{ height: lineHeight }}
-        className="absolute left-4 md:left-1/2 top-0 w-1 bg-gradient-to-b from-amber-500 via-cyan-400 to-amber-500 -translate-x-1/2 hidden md:block rounded-full shadow-[0_0_15px_rgba(245,158,11,0.5)] z-0 origin-top"
+        className="absolute left-3 sm:left-4 md:left-1/2 top-0 w-1 bg-gradient-to-b from-amber-500 via-cyan-400 to-amber-500 -translate-x-1/2 hidden md:block rounded-full shadow-[0_0_15px_rgba(245,158,11,0.5)] z-0 origin-top"
       />
 
-      <div className="space-y-12">
+      <div className="space-y-8 sm:space-y-10 md:space-y-12">
         {schedule.map((item, index) => (
           <motion.div
             key={index}
@@ -88,7 +88,7 @@ export default function Timeline() {
               whileInView={{ scale: [0, 1.5, 1] }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
-              className="absolute left-4 md:left-1/2 w-5 h-5 bg-cyan-950 border-4 border-amber-500 rounded-full -translate-x-1/2 z-10 hidden md:flex items-center justify-center shadow-[0_0_10px_rgba(245,158,11,0.4)]"
+              className="absolute left-3 sm:left-4 md:left-1/2 w-4 sm:w-5 h-4 sm:h-5 bg-cyan-950 border-3 sm:border-4 border-amber-500 rounded-full -translate-x-1/2 z-10 hidden md:flex items-center justify-center shadow-[0_0_10px_rgba(245,158,11,0.4)]"
             >
               {/* Inner pulse */}
               <motion.div
@@ -104,15 +104,15 @@ export default function Timeline() {
               whileInView={{ scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.4, delay: index * 0.1 + 0.3 }}
-              className="absolute left-4 w-3 h-3 bg-amber-500 rounded-full -translate-x-1/2 z-10 md:hidden mt-1.5"
+              className="absolute left-3 sm:left-4 w-2.5 sm:w-3 h-2.5 sm:h-3 bg-amber-500 rounded-full -translate-x-1/2 z-10 md:hidden mt-1.5"
             />
 
             {/* Content Card */}
-            <div className={`w-full md:w-[45%] pl-10 md:pl-0 ${index % 2 === 0 ? "md:pr-12 text-left md:text-right" : "md:pl-12 text-left"
+            <div className={`w-full md:w-[45%] pl-8 sm:pl-10 md:pl-0 ${index % 2 === 0 ? "md:pr-12 text-left md:text-right" : "md:pl-12 text-left"
               }`}>
               <motion.div
                 whileHover={{ scale: 1.05, rotateX: index % 2 === 0 ? 2 : -2, rotateY: index % 2 === 0 ? -2 : 2 }}
-                className="bg-cyan-950/80 backdrop-blur-sm p-6 rounded-2xl border border-cyan-800 shadow-md shadow-black/40 hover:shadow-[0_0_30px_rgba(8,51,68,0.8)] hover:border-cyan-500/50 transition-all cursor-pointer relative overflow-hidden group style-[transform-style:preserve-3d]"
+                className="bg-cyan-950/80 backdrop-blur-sm p-4 sm:p-6 rounded-lg sm:rounded-2xl border border-cyan-800 shadow-md shadow-black/40 hover:shadow-[0_0_30px_rgba(8,51,68,0.8)] hover:border-cyan-500/50 transition-all cursor-pointer relative overflow-hidden group style-[transform-style:preserve-3d]"
               >
                 {/* Hover Glow Effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/0 to-amber-500/0 group-hover:from-cyan-500/10 group-hover:via-transparent group-hover:to-amber-500/10 transition-all duration-500" />
@@ -124,8 +124,8 @@ export default function Timeline() {
                   transition={{ duration: 0.4, delay: index * 0.1 + 0.4 }}
                   className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? "md:justify-end" : "justify-start"}`}
                 >
-                  <Clock className="w-4 h-4 text-amber-500 group-hover:animate-pulse" />
-                  <span className="text-sm font-bold text-amber-500 uppercase tracking-wider">
+                  <Clock className="w-3 sm:w-4 h-3 sm:h-4 text-amber-500 group-hover:animate-pulse flex-shrink-0" />
+                  <span className="text-xs sm:text-sm font-bold text-amber-500 uppercase tracking-wider">
                     {item.time}
                   </span>
                 </motion.div>
@@ -135,7 +135,7 @@ export default function Timeline() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 + 0.5 }}
-                  className="text-xl font-bold text-slate-100 mb-2 group-hover:text-amber-400 transition-colors"
+                  className="text-base sm:text-lg md:text-xl font-bold text-slate-100 mb-2 group-hover:text-amber-400 transition-colors"
                 >
                   {item.title}
                 </motion.h4>
@@ -145,7 +145,7 @@ export default function Timeline() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 + 0.6 }}
-                  className="text-slate-300 text-sm leading-relaxed"
+                  className="text-slate-300 text-xs sm:text-sm leading-relaxed"
                 >
                   {item.description}
                 </motion.p>

@@ -12,9 +12,9 @@ export default function Home() {
             <Hero />
 
             {/* About Section */}
-            <section id="about" className="py-24 bg-cyan-950">
-                <div className="container mx-auto px-4">
-                    <div className="grid md:grid-cols-2 gap-16 items-center">
+            <section id="about" className="py-12 sm:py-16 md:py-24 bg-cyan-950">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -26,7 +26,7 @@ export default function Home() {
                                 subtitle="A flagship event organized by the departments of IT, AI&ML, and Cyber Security at KGiSL Institute of Technology."
                                 centered={false}
                             />
-                            <div className="space-y-6 text-slate-300 leading-relaxed">
+                            <div className="space-y-4 sm:space-y-6 text-slate-300 leading-relaxed text-sm sm:text-base">
                                 <p>
                                     Zenith 2k26 is more than just a symposium; it's a platform where innovation meets execution.
                                     We bring together the brightest minds to compete, collaborate, and create.
@@ -35,9 +35,9 @@ export default function Home() {
                                     Our mission is to foster a culture of technical excellence and provide students with
                                     real-world challenges that push their boundaries.
                                 </p>
-                                <div className="flex flex-wrap gap-3 pt-4">
+                                <div className="flex flex-wrap gap-2 sm:gap-3 pt-4">
                                     {["Information Technology", "AI & Machine Learning", "Cyber Security"].map((dept) => (
-                                        <span key={dept} className="px-4 py-2 bg-cyan-900 text-slate-200 text-sm font-semibold rounded-xl border border-cyan-800">
+                                        <span key={dept} className="px-3 sm:px-4 py-2 bg-cyan-900 text-slate-200 text-xs sm:text-sm font-semibold rounded-lg sm:rounded-xl border border-cyan-800">
                                             {dept}
                                         </span>
                                     ))}
@@ -51,7 +51,7 @@ export default function Home() {
                             transition={{ duration: 0.6 }}
                             className="relative"
                         >
-                            <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/50">
+                            <div className="aspect-square rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/50">
                                 <img
                                     src="https://picsum.photos/seed/college/800/800"
                                     alt="KGiSL Campus"
@@ -59,9 +59,9 @@ export default function Home() {
                                     referrerPolicy="no-referrer"
                                 />
                             </div>
-                            <div className="absolute -bottom-6 -left-6 p-8 bg-amber-500 text-slate-100 rounded-3xl shadow-xl hidden lg:block">
-                                <p className="text-4xl font-bold mb-1">10+</p>
-                                <p className="text-sm font-medium opacity-80 uppercase tracking-wider">Exciting Events</p>
+                            <div className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 p-4 sm:p-8 bg-amber-500 text-slate-100 rounded-2xl sm:rounded-3xl shadow-xl hidden md:block">
+                                <p className="text-2xl sm:text-4xl font-bold mb-1">10+</p>
+                                <p className="text-xs sm:text-sm font-medium opacity-80 uppercase tracking-wider">Exciting Events</p>
                             </div>
                         </motion.div>
                     </div>
@@ -69,8 +69,8 @@ export default function Home() {
             </section>
 
             {/* Schedule Section */}
-            <section id="schedule" className="py-24 bg-cyan-950">
-                <div className="container mx-auto px-4">
+            <section id="schedule" className="py-12 sm:py-16 md:py-24 bg-cyan-950">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-12">
                     <SectionHeader
                         title="Event Schedule"
                         subtitle="Plan your day at Zenith 2k26. Don't miss out on any of our flagship sessions."
@@ -80,19 +80,19 @@ export default function Home() {
             </section>
 
             {/* Registration Section */}
-            <section id="registration" className="py-24 bg-cyan-950">
-                <div className="container mx-auto px-4">
-                    <div className="max-w-4xl mx-auto bg-cyan-900 rounded-[2rem] p-8 md:p-16 text-slate-100 relative overflow-hidden shadow-xl border border-cyan-800">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl -mr-32 -mt-32" />
-                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl -ml-32 -mb-32" />
+            <section id="registration" className="py-12 sm:py-16 md:py-24 bg-cyan-950">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-12">
+                    <div className="max-w-4xl mx-auto bg-cyan-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 text-slate-100 relative overflow-hidden shadow-xl border border-cyan-800">
+                        <div className="absolute top-0 right-0 w-40 sm:w-64 h-40 sm:h-64 bg-amber-500/5 rounded-full blur-3xl -mr-20 sm:-mr-32 -mt-20 sm:-mt-32" />
+                        <div className="absolute bottom-0 left-0 w-40 sm:w-64 h-40 sm:h-64 bg-amber-500/5 rounded-full blur-3xl -ml-20 sm:-ml-32 -mb-20 sm:-mb-32" />
 
-                        <div className="relative z-10 text-center md:text-left">
+                        <div className="relative z-10 text-center">
                             <motion.h2
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5 }}
-                                className="text-3xl md:text-5xl font-display font-bold mb-6 text-slate-100"
+                                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 sm:mb-6 text-slate-100"
                             >
                                 Ready to join Zenith?
                             </motion.h2>
@@ -101,7 +101,7 @@ export default function Home() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: 0.1 }}
-                                className="text-slate-300 text-lg mb-10 max-w-xl"
+                                className="text-slate-300 text-sm sm:text-base md:text-lg mb-8 sm:mb-10 max-w-xl mx-auto"
                             >
                                 Registration is open! Secure your spot now and be part of the most exciting symposium of 2k26.
                             </motion.p>
@@ -111,19 +111,19 @@ export default function Home() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: 0.2 }}
-                                className="grid md:grid-cols-3 gap-8 mb-12"
+                                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12"
                             >
-                                <div className="p-6 bg-cyan-950 rounded-2xl border border-cyan-800 shadow-md shadow-black/40">
-                                    <p className="text-slate-500 text-sm mb-1 uppercase tracking-wider">Registration Fee</p>
-                                    <p className="text-2xl font-bold text-slate-100">₹250 / Person</p>
+                                <div className="p-4 sm:p-6 bg-cyan-950 rounded-xl sm:rounded-2xl border border-cyan-800 shadow-md shadow-black/40">
+                                    <p className="text-slate-500 text-xs sm:text-sm mb-2 uppercase tracking-wider">Registration Fee</p>
+                                    <p className="text-xl sm:text-2xl font-bold text-slate-100">₹250 / Person</p>
                                 </div>
-                                <div className="p-6 bg-cyan-950 rounded-2xl border border-cyan-800 shadow-md shadow-black/40">
-                                    <p className="text-slate-500 text-sm mb-1 uppercase tracking-wider">Last Date</p>
-                                    <p className="text-2xl font-bold text-slate-100">22nd March</p>
+                                <div className="p-4 sm:p-6 bg-cyan-950 rounded-xl sm:rounded-2xl border border-cyan-800 shadow-md shadow-black/40">
+                                    <p className="text-slate-500 text-xs sm:text-sm mb-2 uppercase tracking-wider">Last Date</p>
+                                    <p className="text-xl sm:text-2xl font-bold text-slate-100">22nd March</p>
                                 </div>
-                                <div className="p-6 bg-cyan-950 rounded-2xl border border-cyan-800 shadow-md shadow-black/40">
-                                    <p className="text-slate-500 text-sm mb-1 uppercase tracking-wider">On-Spot</p>
-                                    <p className="text-2xl font-bold text-slate-100">Available</p>
+                                <div className="p-4 sm:p-6 bg-cyan-950 rounded-xl sm:rounded-2xl border border-cyan-800 shadow-md shadow-black/40 sm:col-span-2 md:col-span-1">
+                                    <p className="text-slate-500 text-xs sm:text-sm mb-2 uppercase tracking-wider">On-Spot</p>
+                                    <p className="text-xl sm:text-2xl font-bold text-slate-100">Available</p>
                                 </div>
                             </motion.div>
 
@@ -132,21 +132,26 @@ export default function Home() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: 0.4 }}
-                                className="flex flex-col md:flex-row items-center gap-6"
+                                className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
                             >
                                 <a
                                     href="https://docs.google.com/forms/d/e/1FAIpQLSfcAEgGAK4hzb6sBqy6F-cB9-yOndYrjvXFfHc-vazbtyqsEA/viewform?usp=publish-editor"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-full md:w-auto px-10 py-4 bg-amber-500 text-slate-100 font-bold rounded-2xl hover:bg-amber-600 transition-all shadow-lg shadow-cyan-500/20 flex items-center justify-center gap-2"
+                                    className="w-full sm:w-auto px-6 sm:px-10 py-3 sm:py-4 bg-amber-500 text-slate-100 font-bold rounded-xl sm:rounded-2xl hover:bg-amber-600 transition-all shadow-lg shadow-cyan-500/20 flex items-center justify-center gap-2 text-sm sm:text-base"
                                 >
                                     Register via Google Form
-                                    <ExternalLink className="w-5 h-5" />
+                                    <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
                                 </a>
-                                <p className="text-slate-500 text-sm italic">
-                                    * Includes lunch and participation certificate
-                                </p>
                             </motion.div>
+                            <motion.p
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                transition={{ delay: 0.5 }}
+                                className="text-slate-500 text-xs sm:text-sm italic mt-4 sm:mt-6"
+                            >
+                                * Includes lunch and participation certificate
+                            </motion.p>
                         </div>
                     </div>
                 </div>
@@ -274,7 +279,7 @@ export default function Home() {
                                     <User className="w-8 h-8" />
                                 </div>
                                 <div>
-                                    <h4 className="text-xl font-bold text-slate-100">Shirley</h4>
+                                    <h4 className="text-xl font-bold text-slate-100">Shirley Josphine Mary</h4>
                                     <p className="text-sm font-medium text-amber-500 uppercase tracking-wider">Staff Coordinator</p>
                                 </div>
                             </div>
@@ -300,7 +305,7 @@ export default function Home() {
                                     <User className="w-8 h-8" />
                                 </div>
                                 <div>
-                                    <h4 className="text-xl font-bold text-slate-100">Parvin</h4>
+                                    <h4 className="text-xl font-bold text-slate-100">Parvinkumar K</h4>
                                     <p className="text-sm font-medium text-slate-500 uppercase tracking-wider">Student Coordinator</p>
                                 </div>
                             </div>
