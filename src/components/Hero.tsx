@@ -1,7 +1,10 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { Calendar, MapPin, ChevronRight, Smile } from "lucide-react";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import CountdownTimer from "./CountdownTimer";
+
+const MotionLink = motion.create(Link);
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -43,12 +46,12 @@ export default function Hero() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
             <div className="flex items-center gap-2 text-slate-200 font-medium">
               <Calendar className="w-5 h-5 text-amber-500" />
-              <span>18th March 2026</span>
+              <span>24th March 2026</span>
             </div>
             <div className="hidden md:block w-1.5 h-1.5 rounded-full bg-cyan-800" />
             <div className="flex items-center gap-2 text-slate-200 font-medium">
               <Smile className="w-5 h-5 text-amber-500" />
-              <span>9:30 AM onwards</span>
+              <span>8:30 AM onwards</span>
             </div>
             <div className="hidden md:block w-1.5 h-1.5 rounded-full bg-cyan-800" />
             <div className="flex items-center gap-2 text-slate-200 font-medium">
@@ -58,7 +61,7 @@ export default function Hero() {
           </div>
 
           <div className="mb-12">
-            <CountdownTimer targetDate="2026-03-18T09:30:00" />
+            <CountdownTimer targetDate="2026-03-24T08:30:00" />
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -71,14 +74,14 @@ export default function Hero() {
               Register Now
               <ChevronRight className="w-5 h-5" />
             </motion.a>
-            <motion.a
-              href="#events"
+            <MotionLink
+              to="/events"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-cyan-950 text-slate-100 border border-cyan-800 shadow-md shadow-black/40 rounded-2xl font-bold hover:bg-cyan-900 transition-all"
             >
               Explore Events
-            </motion.a>
+            </MotionLink>
           </div>
         </motion.div>
       </div>

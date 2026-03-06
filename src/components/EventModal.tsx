@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { X, Trophy, Users, Phone } from "lucide-react";
+import { X, Trophy, Users, Phone, FileText } from "lucide-react";
 
 export interface EventPrize {
     place: string;
@@ -30,6 +30,7 @@ export interface EventDetails {
     rounds: EventRound[];
     prizes: EventPrize[];
     coordinators: EventCoordinator[];
+    documentUrl?: string;
 }
 
 interface EventModalProps {
@@ -181,8 +182,19 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
-                        className="p-4 bg-cyan-950/90 backdrop-blur-xl border-t border-cyan-800 flex justify-end shrink-0"
+                        className="p-4 bg-cyan-950/90 backdrop-blur-xl border-t border-cyan-800 flex items-center justify-end gap-3 shrink-0"
                     >
+                        {event.documentUrl && (
+                            <a
+                                href={event.documentUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-900 hover:bg-cyan-800 text-slate-200 hover:text-white font-semibold rounded-xl transition-all border border-cyan-700 hover:border-cyan-500 text-sm"
+                            >
+                                <FileText className="w-4 h-4" />
+                                Read Full Details
+                            </a>
+                        )}
                         <a
                             href="#registration"
                             onClick={onClose}

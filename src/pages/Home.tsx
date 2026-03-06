@@ -4,6 +4,7 @@ import { User, Phone, Mail, ExternalLink, MapPin } from "lucide-react";
 import Hero from "../components/Hero";
 import SectionHeader from "../components/SectionHeader";
 import Timeline from "../components/Timeline";
+import CommitteeSection from "../components/CommitteeSection";
 
 export default function Home() {
     return (
@@ -118,7 +119,7 @@ export default function Home() {
                                 </div>
                                 <div className="p-6 bg-cyan-950 rounded-2xl border border-cyan-800 shadow-md shadow-black/40">
                                     <p className="text-slate-500 text-sm mb-1 uppercase tracking-wider">Last Date</p>
-                                    <p className="text-2xl font-bold text-slate-100">15th March</p>
+                                    <p className="text-2xl font-bold text-slate-100">22nd March</p>
                                 </div>
                                 <div className="p-6 bg-cyan-950 rounded-2xl border border-cyan-800 shadow-md shadow-black/40">
                                     <p className="text-slate-500 text-sm mb-1 uppercase tracking-wider">On-Spot</p>
@@ -250,6 +251,9 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
+            {/* Organizing Committee */}
+            <CommitteeSection />
 
             {/* Contact Section */}
             <section id="contact" className="py-24 bg-cyan-950">
