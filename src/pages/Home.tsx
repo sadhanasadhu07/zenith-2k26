@@ -79,6 +79,30 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* Poster Section */}
+            <section id="poster" className="py-24 bg-cyan-950">
+                <div className="container mx-auto px-4">
+                    <SectionHeader
+                        title="Symposium Poster"
+                        subtitle="Official poster for Zenith 2k26 National Level Technical Symposium."
+                    />
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border-8 border-cyan-800"
+                    >
+                        <img
+                            src="https://picsum.photos/seed/poster/1200/800"
+                            alt="Zenith 2k26 Official Poster"
+                            className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
+                            referrerPolicy="no-referrer"
+                        />
+                    </motion.div>
+                </div>
+            </section>
+
             {/* Registration Section */}
             <section id="registration" className="py-12 sm:py-16 md:py-24 bg-cyan-950">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-12">
@@ -157,30 +181,6 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Poster Section */}
-            <section id="poster" className="py-24 bg-cyan-950">
-                <div className="container mx-auto px-4">
-                    <SectionHeader
-                        title="Symposium Poster"
-                        subtitle="Official poster for Zenith 2k26 National Level Technical Symposium."
-                    />
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border-8 border-cyan-800"
-                    >
-                        <img
-                            src="https://picsum.photos/seed/poster/1200/800"
-                            alt="Zenith 2k26 Official Poster"
-                            className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
-                            referrerPolicy="no-referrer"
-                        />
-                    </motion.div>
-                </div>
-            </section>
-
             {/* Venue Section */}
             <section id="venue" className="py-24 bg-cyan-900/50">
                 <div className="container mx-auto px-4">
@@ -196,13 +196,12 @@ export default function Home() {
                         />
                     </motion.div>
 
-                    <div className="grid lg:grid-cols-3 gap-12 items-start">
+                    <div className="grid sm:grid-cols-2 gap-8 max-w-2xl mx-auto items-start">
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="lg:col-span-1 space-y-8"
                         >
                             <div className="p-8 bg-cyan-950 rounded-3xl shadow-md shadow-black/40 border border-cyan-800 hover:border-cyan-700 transition-colors">
                                 <h4 className="text-xl font-bold mb-6 flex items-center gap-2 text-slate-100">
@@ -224,7 +223,14 @@ export default function Home() {
                                     <ExternalLink className="w-4 h-4" />
                                 </a>
                             </div>
+                        </motion.div>
 
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                        >
                             <div className="p-8 bg-cyan-950 rounded-3xl shadow-md shadow-black/40 border border-cyan-800 hover:border-cyan-700 transition-colors">
                                 <h4 className="text-xl font-bold mb-4 text-slate-100">Scan for Location</h4>
                                 <div className="aspect-square bg-cyan-900 rounded-2xl overflow-hidden flex items-center justify-center border border-cyan-800">
@@ -235,23 +241,6 @@ export default function Home() {
                                     />
                                 </div>
                             </div>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, x: 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
-                            className="lg:col-span-2 h-[500px] rounded-3xl overflow-hidden shadow-xl border border-cyan-800"
-                        >
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.228771434386!2d76.99161737504655!3d11.09633398907274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8f79905672883%3A0x221ae591697277c!2sKGiSL%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1709110000000!5m2!1sen!2sin"
-                                className="w-full h-full border-0 grayscale opacity-80 hover:grayscale-0 transition-all duration-700"
-                                allowFullScreen={true}
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                                title="KGiSL Institute of Technology Location"
-                            />
                         </motion.div>
                     </div>
                 </div>
